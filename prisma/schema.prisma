@@ -3,23 +3,23 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model GuildConfig {
-  guildId    String   @id
-  prefix     String   @default("$")
-  avatarUrl  String?
-  bannerUrl  String?
-  bio        String?
-  djRoleId   String?
+  guildId           String   @id
+  prefix            String   @default("$")
+  avatarUrl         String?
+  bannerUrl         String?
+  bio               String?
+  djRoleId          String?
   nameplateFontId   Int?     @default(11)
   nameplateEffectId Int?     @default(1)
   nameplateColors   String?  @default("16777215")
   nameplateHex      String?  @default("#FFFFFF")
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
 }
 
 model NoPrefixUser {
