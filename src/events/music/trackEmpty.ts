@@ -47,8 +47,8 @@ export default {
     const botId = client.user!.id;
     const c = container("Queue have been ended");
     const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
-      new ButtonBuilder().setLabel("Invite Bot").setURL(`https://discord.com/api/oauth2/authorize?client_id=${botId}&permissions=8&scope=bot%20applications.commands`).setStyle(ButtonStyle.Link),
-      new ButtonBuilder().setLabel("Support").setURL("https://discord.gg/nQQKstzYw").setStyle(ButtonStyle.Link)
+      new ButtonBuilder().setLabel("Invite Bot").setURL(``).setStyle(ButtonStyle.Link),
+      new ButtonBuilder().setLabel("Support").setURL("https://discord.gg/nJRBeUxrv").setStyle(ButtonStyle.Link)
     );
     c.addActionRowComponents(row as any);
 

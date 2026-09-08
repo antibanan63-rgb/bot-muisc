@@ -61,7 +61,7 @@ export function buildHelpMenu(category = 'Home', client: CreoClient, userId?: st
   );
 
   const buttonRow = new ActionRowBuilder<ButtonBuilder>().addComponents(
-    new ButtonBuilder().setLabel("Invite Bot").setURL(`https://discord.com/api/oauth2/authorize?client_id=${botId}&permissions=8&scope=bot%20applications.commands`).setStyle(ButtonStyle.Link),
+    new ButtonBuilder().setLabel("Invite Bot").setURL(``).setStyle(ButtonStyle.Link),
     new ButtonBuilder().setLabel("Support Server").setURL("https://discord.gg/nJRBeUxrv").setStyle(ButtonStyle.Link)
   );
 
