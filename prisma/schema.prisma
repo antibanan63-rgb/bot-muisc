@@ -1,0 +1,121 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model GuildConfig {
+  guildId    String   @id
+  prefix     String   @default("$")
+  avatarUrl  String?
+  bannerUrl  String?
+  bio        String?
+  djRoleId   String?
+  nameplateFontId   Int?     @default(11)
+  nameplateEffectId Int?     @default(1)
+  nameplateColors   String?  @default("16777215")
+  nameplateHex      String?  @default("#FFFFFF")
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model NoPrefixUser {
+  userId    String    @id
+  expiresAt DateTime?
+  addedAt   DateTime  @default(now())
+}
+
+model PremiumUser {
+  userId    String    @id
+  tier      Int       @default(1)
+  expiresAt DateTime?
+  addedAt   DateTime  @default(now())
+}
+
+model AdminUser {
+  userId  String   @id
+  addedAt DateTime @default(now())
+}
+
+model Vc247 {
+  guildId   String @id
+  channelId String
+}
+
+model AutoReact {
+  id       Int    @id @default(autoincrement())
+  guildId  String
+  trigger  String
+  reaction String
+
+  @@unique([guildId, trigger])
+}
+
+model AutoRespond {
+  id       Int    @id @default(autoincrement())
+  guildId  String
+  trigger  String
+  response String
+
+  @@unique([guildId, trigger])
+}
+
+model IgnoredChannel {
+  id        Int    @id @default(autoincrement())
+  guildId   String
+  channelId String
+
+  @@unique([guildId, channelId])
+}
+
+model LikedTrack {
+  id        Int      @id @default(autoincrement())
+  userId    String
+  title     String
+  uri       String
+  author    String
+  duration  Int
+  thumbnail String?
+  source    String
+  addedAt   DateTime @default(now())
+
+  @@unique([userId, uri])
+}
+
+model Playlist {
+  id        Int             @id @default(autoincrement())
+  userId    String
+  name      String
+  tracks    PlaylistTrack[]
+  createdAt DateTime        @default(now())
+
+  @@unique([userId, name])
+}
+
+model PlaylistTrack {
+  id         Int      @id @default(autoincrement())
+  playlistId Int
+  playlist   Playlist @relation(fields: [playlistId], references: [id], onDelete: Cascade)
+  title      String
+  uri        String
+  author     String
+  duration   Int
+  thumbnail  String?
+  source     String
+  position   Int
+}
+
+model Blacklist {
+  userId  String   @id
+  reason  String?
+  addedAt DateTime @default(now())
+}
+
+model UserConfig {
+  userId       String   @id
+  searchEngine String   @default("ytsearch")
+  updatedAt    DateTime @updatedAt
+}
