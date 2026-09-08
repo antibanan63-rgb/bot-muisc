@@ -13,7 +13,7 @@ export function buildHelpMenu(category = 'Home', client: CreoClient, userId?: st
   const prefix = process.env.PREFIX || '$';
   const botId = client.user!.id;
 
-  const textTop = `# ${emojis.help.dance} Creo Help Menu\n### *A Premium Experience Made By FeroX Devs*\n\n> ${emojis.general.stats} **Statistics**\n> ${emojis.general.dot} **Commands:** \`${commandCount}\`\n> ${emojis.general.dot} **Prefix:** \`${prefix}\`\n\n`;
+  const textTop = `# ${emojis.help.dance} Creo Help Menu\n### *A Premium Experience Made By Root Access*\n\n> ${emojis.general.stats} **Statistics**\n> ${emojis.general.dot} **Commands:** \`${commandCount}\`\n> ${emojis.general.dot} **Prefix:** \`${prefix}\`\n\n`;
   const textBottom = `## ${emojis.help.peach} **Command Categories**\n\n> ${emojis.general.music} \`:\` **Music**\n> ${emojis.general.system} \`:\` **General**\n> ${emojis.general.autoreact} \`:\` **Config**\n> ${emojis.general.premium} \`:\` **Premium**\n> ${emojis.general.fun} \`:\` **Fun**\n\n-# Select a category from the dropdown below to explore commands!`;
 
   if (category === 'Home') {
@@ -62,7 +62,7 @@ export function buildHelpMenu(category = 'Home', client: CreoClient, userId?: st
 
   const buttonRow = new ActionRowBuilder<ButtonBuilder>().addComponents(
     new ButtonBuilder().setLabel("Invite Bot").setURL(`https://discord.com/api/oauth2/authorize?client_id=${botId}&permissions=8&scope=bot%20applications.commands`).setStyle(ButtonStyle.Link),
-    new ButtonBuilder().setLabel("Support Server").setURL("https://discord.gg/Vx43JXddFD").setStyle(ButtonStyle.Link)
+    new ButtonBuilder().setLabel("Support Server").setURL("https://discord.gg/nJRBeUxrv").setStyle(ButtonStyle.Link)
   );
 
   container.addActionRowComponents(selectRow as any);

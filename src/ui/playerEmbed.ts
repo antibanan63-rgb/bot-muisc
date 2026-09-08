@@ -53,7 +53,7 @@ export function buildPlayerUI(
   }
 
   const mainTrackInfo = `# ${emojis.music.playing} Now Playing\n### **${track.title}**`;
-  const extraInfo = `> ${emojis.general.dot} **Author:** \`${track.author || 'FeroX GGs'}\`\n> ${emojis.general.dot} **Duration:** \`${duration}\`\n> ${emojis.general.dot} **Source:** ${getSourceLink(track)}\n\n${emojis.general.team} **Requested by:** ${reqName}\n\n-# Creo - Made By FeroX Devs`;
+  const extraInfo = `> ${emojis.general.dot} **Author:** \`${track.author || 'Root Access'}\`\n> ${emojis.general.dot} **Duration:** \`${duration}\`\n> ${emojis.general.dot} **Source:** ${getSourceLink(track)}\n\n${emojis.general.team} **Requested by:** ${reqName}\n\n-# Creo - Made By Root Access`;
 
   const section = new SectionBuilder()
     .addTextDisplayComponents(new TextDisplayBuilder().setContent(mainTrackInfo));

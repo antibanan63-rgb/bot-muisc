@@ -630,7 +630,7 @@ export class ComponentHandler {
         let content = '';
         let title = '';
         const dot = emojis.general.dot;
-        const footer = `Laira • Made By FeroX Devs`;
+        const footer = `Laira • Made By Root Access`;
 
         if (choice === 'general') {
           title = `${emojis.general.stats} General Statistics`;
@@ -654,9 +654,9 @@ export class ComponentHandler {
             `${dot} **CPU Arch:** \`${process.arch}\``;
         } else if (choice === 'team') {
           title = `${emojis.general.team} Development Team`;
-          content = `${dot} **Lead Developer:** \`ferox.dev\`\n` +
-            `${dot} **Contributors:** \`ferox_devs_group\`\n` +
-            `${dot} **Support Server:** [Click Here](https://discord.gg/ferox-music)`;
+          content = `${dot} **Lead Developer:** \`5qj ?\`\n` +
+            `${dot} **Contributors:** \`RootAccess_group\`\n` +
+            `${dot} **Support Server:** [Click Here](https://discord.gg/nJRBeUxrv`;
         } else if (choice === 'ping') {
           title = `${emojis.general.ping} Latency Statistics`;
           content = `${dot} **Gateway Ping:** \`${this.client.ws.ping}ms\``; // simplified
@@ -672,7 +672,7 @@ export class ComponentHandler {
 
         const botName = this.client.user?.username || 'Bot';
         const statsUI = new ContainerBuilder()
-          .addTextDisplayComponents(new TextDisplayBuilder().setContent(`# ${title}\n\n${content}\n\n-# ${botName} • Made By FeroX Devs`));
+          .addTextDisplayComponents(new TextDisplayBuilder().setContent(`# ${title}\n\n${content}\n\n-# ${botName} • Made By Root Access`));
 
         const select = new StringSelectMenuBuilder()
           .setCustomId(`${customPrefix}:stats_select:${callerId}`)
