@@ -174,11 +174,11 @@ export class CreoClient extends Client {
 
   private initMusic() {
     const Nodes = [{
-      name: process.env.LAVALINK_NAME || 'CreoNode',
-      url: process.env.LAVALINK_HOST || process.env.LAVALINK_URL || 'localhost:2333',
-      auth: process.env.LAVALINK_PASSWORD || process.env.LAVALINK_AUTH || 'youshallnotpass',
-      secure: process.env.LAVALINK_SECURE === 'true'
-    }];
+name: 'CreoNode',
+host: process.env.LAVALINK_HOST || 'lavalinkv3.serenetia.com',
+port: Number(process.env.LAVALINK_PORT) || 443,
+auth: process.env.LAVALINK_PASSWORD || 'https://dsc.gg/ajidevserver',
+secure: true
 
     this.music = new Kazagumo({
       defaultSearchEngine: 'youtube_music',
