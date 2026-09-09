@@ -1,5 +1,5 @@
 import { Client, Collection, GatewayIntentBits, Options } from 'discord.js';
-import { Kazagumo, KazagumoOptions } from 'kazagumo';
+import { Kazagumo } from 'kazagumo';
 import { Connectors } from 'shoukaku';
 import { PrismaClient } from '@prisma/client';
 import NodeCache from 'node-cache';
@@ -78,7 +78,7 @@ export class CreoClient extends Client {
       ██████╗  ██████╗  ██████╗ ████████╗    █████╗  ██████╗ ██████╗ ███████╗███████╗
       ██╔══██╗██╔═══██╗██╔═══██╗╚══██╔══╝   ██╔══██╗██╔════╝██╔════╝ ██╔════╝██╔════╝
       ██████╔╝██║   ██║██║   ██║   ██║      ███████║██║     ██║      █████╗  ███████╗
-      ██╔══██╗██║   ██║██║   ██║   ██║      ██╔══██║██║     ██║      ██╔══╝  ╚════██║
+      ██╔══██╗██║   ██║██║   ██║   ██║      ██╔══██║██║     ██║      ██╔══╝  ╚╚══██║
       ██║  ██║╚██████╔╝╚██████╔╝   ██║      ██║  ██║╚██████╗╚██████╗ ███████╗███████║
       ╚═╝  ╚═╝ ╚═════╝  ╚═════╝    ╚═╝      ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝╚══════╝
       `;
@@ -184,7 +184,7 @@ export class CreoClient extends Client {
         url: `${host}:${port}`,
         auth: password,
         secure: isSecure,
-        path: '/v3/websocket', // رد هاد المسار حيت النود من نوع V3 وكاتحتاج مسار الـ websocket ديالها
+        path: '/v3/websocket',
       }
     ];
 
@@ -207,6 +207,7 @@ export class CreoClient extends Client {
 
     this.musicHandler.load();
   }
+}
 
 const client = new CreoClient();
 client.start().catch((error) => {
