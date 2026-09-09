@@ -173,17 +173,20 @@ export class CreoClient extends Client {
   }
 
   private initMusic() {
-    const host = process.env.LAVALINK_HOST || 'lavalinkv3.serenetia.com';
-    const port = Number(process.env.LAVALINK_PORT) || 443;
-    const password = process.env.LAVALINK_PASSWORD || 'https://dsc.gg/ajidevserver';
-    const isSecure = port === 443 || port === 8443;
-
-    const Nodes = [{
-      name: 'CreoNode',
-      url: `${isSecure ? 'wss' : 'ws'}://${host}:${port}`,
-      auth: password,
-      secure: isSecure
-    }];
+    const Nodes = [
+      {
+        name: 'MainNode',
+        url: 'lava.lexnet.cc:443',
+        auth: 'https://dsc.gg/lexnet',
+        secure: true
+      },
+      {
+        name: 'BackupNode',
+        url: 'lavalinkv3.serenetia.com:443',
+        auth: 'https://dsc.gg/ajidevserver',
+        secure: true
+      }
+    ];
 
     this.music = new Kazagumo({
       defaultSearchEngine: 'youtube_music',
