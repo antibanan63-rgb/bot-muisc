@@ -184,6 +184,7 @@ export class CreoClient extends Client {
         url: `${host}:${port}`,
         auth: password,
         secure: isSecure,
+        path: '/v3/websocket', // رد هاد المسار حيت النود من نوع V3 وكاتحتاج مسار الـ websocket ديالها
       }
     ];
 
@@ -206,7 +207,6 @@ export class CreoClient extends Client {
 
     this.musicHandler.load();
   }
-}
 
 const client = new CreoClient();
 client.start().catch((error) => {
