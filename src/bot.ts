@@ -78,7 +78,7 @@ export class CreoClient extends Client {
       ██████╗  ██████╗  ██████╗ ████████╗    █████╗  ██████╗ ██████╗ ███████╗███████╗
       ██╔══██╗██╔═══██╗██╔═══██╗╚══██╔══╝   ██╔══██╗██╔════╝██╔════╝ ██╔════╝██╔════╝
       ██████╔╝██║   ██║██║   ██║   ██║      ███████║██║     ██║      █████╗  ███████╗
-      ██╔══██╗██║   ██║██║   ██║   ██║      ██╔══██║██║     ██║      ██╔══╝  ╚╚════██║
+      ██╔══██╗██║   ██║██║   ██║   ██║      ██╔══██║██║     ██║      ██╔══╝  ╚════██║
       ██║  ██║╚██████╔╝╚██████╔╝   ██║      ██║  ██║╚██████╗╚██████╗ ███████╗███████║
       ╚═╝  ╚═╝ ╚═════╝  ╚═════╝    ╚═╝      ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝╚══════╝
       `;
@@ -175,15 +175,15 @@ export class CreoClient extends Client {
   private initMusic() {
     const Nodes = [
       {
-        name: 'Node-1',
-        url: 'lavalink.uyu.su:443',
+        name: 'Node-Free-1',
+        url: 'lava.link:443',
         auth: 'youshallnotpass',
         secure: true
       },
       {
-        name: 'Node-2',
-        url: 'lava.projectheart.uk:443',
-        auth: 'projectheart',
+        name: 'Node-Free-2',
+        url: 'lavalink.josh-ware.com:443',
+        auth: 'youshallnotpass',
         secure: true
       }
     ];
