@@ -175,9 +175,10 @@ export class CreoClient extends Client {
  private initMusic() {
     const Nodes = [{
       name: 'CreoNode',
-      url: `${process.env.LAVALINK_HOST || 'lavalinkv3.serenetia.com'}:${Number(process.env.LAVALINK_PORT) || 443}`,
+      host: process.env.LAVALINK_HOST || 'lavalinkv3.serenetia.com',
+      port: Number(process.env.LAVALINK_PORT) || 80,
       auth: process.env.LAVALINK_PASSWORD || 'https://dsc.gg/ajidevserver',
-      secure: true
+      secure: false
     }];
 
     this.music = new Kazagumo({
