@@ -1,5 +1,5 @@
 import { Client, Collection, GatewayIntentBits, Options } from 'discord.js';
-import { Kazagumo } from 'kazagumo';
+import { Kazagumo, KazagumoOptions } from 'kazagumo';
 import { Connectors } from 'shoukaku';
 import { PrismaClient } from '@prisma/client';
 import NodeCache from 'node-cache';
@@ -78,7 +78,7 @@ export class CreoClient extends Client {
       ██████╗  ██████╗  ██████╗ ████████╗    █████╗  ██████╗ ██████╗ ███████╗███████╗
       ██╔══██╗██╔═══██╗██╔═══██╗╚══██╔══╝   ██╔══██╗██╔════╝██╔════╝ ██╔════╝██╔════╝
       ██████╔╝██║   ██║██║   ██║   ██║      ███████║██║     ██║      █████╗  ███████╗
-      ██╔══██╗██║   ██║██║   ██║   ██║      ██╔══██║██║     ██║      ██╔══╝  ╚╚══██║
+      ██╔══██╗██║   ██║██║   ██║   ██║      ██╔══██║██║     ██║      ██╔══╝  ╚════██║
       ██║  ██║╚██████╔╝╚██████╔╝   ██║      ██║  ██║╚██████╗╚██████╗ ███████╗███████║
       ╚═╝  ╚═╝ ╚═════╝  ╚═════╝    ╚═╝      ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝╚══════╝
       `;
@@ -173,20 +173,12 @@ export class CreoClient extends Client {
   }
 
   private initMusic() {
-    const host = process.env.LAVALINK_HOST || 'lavalink.serenetia.com';
-    const port = Number(process.env.LAVALINK_PORT) || 443;
-    const password = process.env.LAVALINK_PASSWORD || 'https://dsc.gg/ajidevserver';
-    const isSecure = port === 443 || port === 8443;
-
-    const Nodes = [
-      {
-        name: 'Serenetia-V3-Node',
-        url: `${host}:${port}`,
-        auth: password,
-        secure: isSecure,
-        path: '/v3/websocket',
-      }
-    ];
+    const Nodes = [{
+      name: process.env.LAVALINK_NAME || 'CreoNode',
+      url: process.env.LAVALINK_HOST || process.env.LAVALINK_URL || 'localhost:2333',
+      auth: process.env.LAVALINK_PASSWORD || process.env.LAVALINK_AUTH || 'youshallnotpass',
+      secure: process.env.LAVALINK_SECURE === 'true'
+    }];
 
     this.music = new Kazagumo({
       defaultSearchEngine: 'youtube_music',
