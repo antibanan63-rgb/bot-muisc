@@ -78,7 +78,7 @@ export class CreoClient extends Client {
       ██████╗  ██████╗  ██████╗ ████████╗    █████╗  ██████╗ ██████╗ ███████╗███████╗
       ██╔══██╗██╔═══██╗██╔═══██╗╚══██╔══╝   ██╔══██╗██╔════╝██╔════╝ ██╔════╝██╔════╝
       ██████╔╝██║   ██║██║   ██║   ██║      ███████║██║     ██║      █████╗  ███████╗
-      ██╔══██╗██║   ██║██║   ██║   ██║      ██╔══██║██║     ██║      ██╔══╝  ╚════██║
+      ██╔══██╗██║   ██║██║   ██║   ██║      ██╔══██║██║     ██║      ██╔══╝  ╚╚════██║
       ██║  ██║╚██████╔╝╚██████╔╝   ██║      ██║  ██║╚██████╗╚██████╗ ███████╗███████║
       ╚═╝  ╚═╝ ╚═════╝  ╚═════╝    ╚═╝      ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝╚══════╝
       `;
@@ -175,15 +175,15 @@ export class CreoClient extends Client {
   private initMusic() {
     const Nodes = [
       {
-        name: 'MainNode',
-        url: 'lava.lexnet.cc:443',
-        auth: 'https://dsc.gg/lexnet',
+        name: 'Node-1',
+        url: 'lavalink.uyu.su:443',
+        auth: 'youshallnotpass',
         secure: true
       },
       {
-        name: 'BackupNode',
-        url: 'lavalinkv3.serenetia.com:443',
-        auth: 'https://dsc.gg/ajidevserver',
+        name: 'Node-2',
+        url: 'lava.projectheart.uk:443',
+        auth: 'projectheart',
         secure: true
       }
     ];
