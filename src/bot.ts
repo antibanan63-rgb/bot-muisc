@@ -176,12 +176,13 @@ export class CreoClient extends Client {
     const host = process.env.LAVALINK_HOST || 'lavalinkv3.serenetia.com';
     const port = Number(process.env.LAVALINK_PORT) || 443;
     const password = process.env.LAVALINK_PASSWORD || 'https://dsc.gg/ajidevserver';
+    const isSecure = port === 443 || port === 8443;
 
     const Nodes = [{
       name: 'CreoNode',
-      url: `${host}:${port}`,
+      url: `${isSecure ? 'wss' : 'ws'}://${host}:${port}`,
       auth: password,
-      secure: port === 443 || port === 8443
+      secure: isSecure
     }];
 
     this.music = new Kazagumo({
