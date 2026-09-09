@@ -172,13 +172,18 @@ export class CreoClient extends Client {
     }
   }
 
-private initMusic() {
-  const Nodes = [{
-    name: 'CreoNode',
-    url: `http://${process.env.LAVALINK_HOST || 'lavalinkv3.serenetia.com'}:${Number(process.env.LAVALINK_PORT) || 80}`,
-    auth: process.env.LAVALINK_PASSWORD || 'https://dsc.gg/ajidevserver',
-    secure: false
-  }];
+  private initMusic() {
+    const host = process.env.LAVALINK_HOST || 'lavalinkv3.serenetia.com';
+    const port = Number(process.env.LAVALINK_PORT) || 443;
+    const password = process.env.LAVALINK_PASSWORD || 'https://dsc.gg/ajidevserver';
+
+    const Nodes = [{
+      name: 'CreoNode',
+      url: `${host}:${port}`,
+      auth: password,
+      secure: port === 443 || port === 8443
+    }];
+
     this.music = new Kazagumo({
       defaultSearchEngine: 'youtube_music',
       plugins: [
