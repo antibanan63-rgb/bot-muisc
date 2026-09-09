@@ -175,16 +175,11 @@ export class CreoClient extends Client {
   private initMusic() {
     const Nodes = [
       {
-        name: 'Node-Alpha',
-        url: 'lavalink.darrennathanael.com:443',
-        auth: 'youshallnotpass',
-        secure: true
-      },
-      {
         name: 'Node-Beta',
         url: 'lava.chaika.moe:443',
-        auth: 'youshallnotpass',
-        secure: true
+        auth: 'yourshroudedsecret',
+        secure: true,
+        path: '/v4/websocket'
       }
     ];
 
